@@ -82,7 +82,10 @@
     gap: 40px;
     align-items: start;
   }
-  @media (max-width: 680px) { .page-wrap { grid-template-columns: 1fr; } }
+  @media (max-width: 680px) {
+    .page-wrap { grid-template-columns: 1fr; }
+    .book-panel { position: static !important; top: auto; }
+  }
   .book-panel { position: sticky; top: 24px; }
   .book-cover {
     border-radius: 4px 16px 16px 4px;

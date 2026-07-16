@@ -499,7 +499,7 @@ async function fetchShippingOptions() {
   document.getElementById("shipping-options-list").innerHTML = "";
   const res = await fetch(`${API_BASE}/api/shipping`, {
     method: "POST",
-    headers: { "Authorization": "Bearer " + state.accessToken, "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       currency: "USD",
       line_items: [{ pod_package_id: CONFIG.POD_PACKAGE_ID, quantity: state.qty, page_count: 33 }],
@@ -545,7 +545,7 @@ async function placeOrder() {
     
     const res = await fetch(`${API_BASE}/api/order`, {
       method: "POST",
-      headers: { "Authorization": "Bearer " + state.accessToken, "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         contact_email: CONFIG.CONTACT_EMAIL,
         line_items: [{ printable_id: CONFIG.PRINTABLE_ID, pod_package_id: CONFIG.POD_PACKAGE_ID, quantity: state.qty, title: "Fill Me Up With Color" }],
